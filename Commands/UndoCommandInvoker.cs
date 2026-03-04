@@ -2,13 +2,17 @@
 using System.Collections.Generic;
 using System.Text;
 
-namespace WarehouseManager.Commands
+namespace ChaimWarehouse.Commands
 {
     internal class UndoCommandInvoker
     {
         public void Execute(IUndoCommand undoCommand, string[] args)
         {
-            undoCommand.Execute(args);
+            
+        }
+        public void Undo()
+        {
+
         }
     }
 }

@@ -2,7 +2,7 @@
 using System.Collections.Generic;
 using System.Text;
 
-namespace WarehouseManager.WarehouseFolder
+namespace ChaimWarehouse.WarehouseFolder
 {
     internal class Item
     {

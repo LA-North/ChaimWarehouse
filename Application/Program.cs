@@ -1,11 +1,13 @@
-﻿using Serilog;
-using WarehouseManager.WarehouseFolder;
-namespace WarehouseManager.Application
+﻿using ChaimWarehouse.WarehouseFolder;
+using Serilog;
+//using WarehouseManager.WarehouseFolder;
+namespace ChaimWarehouse.Application
 {
     internal class Program
     {
         public static void Main(string[] args)
         {
+            EventMessageService eventMessageService = new EventMessageService(Warehouse.GetWarehouse());
             Log.Logger = new LoggerConfiguration()
                  .MinimumLevel.Debug()
                  .WriteTo.Console()
@@ -28,18 +30,6 @@ namespace WarehouseManager.Application
                 Log.CloseAndFlush();
             }
         }
-        //public static void Main(string[] args)
-        //{
-        //    Warehouse w = Warehouse.GetWarehouse();
-        //    var item = new Item("a", 5.5, new HashSet<ItemProperty>(new[] { ItemProperty.Fragile, ItemProperty.Needscooling }));
-        //    w.AddnewItem(item);
-        //    w.AddnewItem(new Item("b", 5, new HashSet<ItemProperty>(new[] { ItemProperty.Fragile, ItemProperty.Needscooling })));
-        //    w.AddnewItem(new Item("c", 50, new HashSet<ItemProperty>(new[] { ItemProperty.Fragile, ItemProperty.Edible })));
-        //    w.AddnewItem(new Item("r", 55, new HashSet<ItemProperty>(new[] { ItemProperty.Fragile })));
-
-        //    w.AddStock(item.Id + -1, 2000000000);
-        //    w.PrintWarehouse();
-
-        //}
+       
     }
 }

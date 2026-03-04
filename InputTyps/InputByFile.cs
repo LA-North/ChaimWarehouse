@@ -2,9 +2,13 @@
 using System.Collections.Generic;
 using System.Text;
 
-namespace WarehouseManager.InputTyps
+namespace ChaimWarehouse.InputTyps
 {
-    internal class InputByFile
+    internal class InputByFile : IInputStringGetter
     {
+        public string GetInputString()
+        {
+            throw new NotImplementedException();
+        }
     }
 }

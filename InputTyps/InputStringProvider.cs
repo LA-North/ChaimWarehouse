@@ -2,7 +2,7 @@
 using System.Collections.Generic;
 using System.Text;
 
-namespace WarehouseManager.InputTyps
+namespace ChaimWarehouse.InputTyps
 {
     internal class InputStringProvider
     {
