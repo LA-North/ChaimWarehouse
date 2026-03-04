@@ -2,10 +2,9 @@
 using System.Collections.Generic;
 using System.Text;
 
-namespace WarehouseManager.Application
+namespace ChaimWarehouse.Application
 {
     internal class AppHelper
     {
-        public void Persist() { }
     }
 }

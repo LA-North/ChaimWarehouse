@@ -2,13 +2,13 @@
 using System.Collections.Generic;
 using System.Text;
 
-namespace WarehouseManager.Commands
+namespace ChaimWarehouse.Commands
 {
     internal class UndoCommand : INotUndoCommand
     {
         public void Execute(string[] args)
         {
-            Console.WriteLine("Undo");
+            
         }
     }
 }
