@@ -4,7 +4,11 @@ using System.Text;
 
 namespace ChaimWarehouse.Commands
 {
-    internal interface IUndoCommand
+    /// <summary>
+    /// Interface for commands that support execution and undo.
+    /// Used by commands that modify the warehouse state.
+    /// </summary>
+    public interface IUndoCommand
     {
         void Execute(string[] args);
         void Undo();

@@ -4,7 +4,11 @@ using System.Text;
 
 namespace ChaimWarehouse.WarehouseFolder
 {
-    internal class Item
+    /// <summary>
+    /// Represents a product stored in the warehouse.
+    /// Contains basic details like name, price and properties.
+    /// </summary>
+    public class Item
     {
         private static int CounterId { get; set; } 
         public int Id { get; }

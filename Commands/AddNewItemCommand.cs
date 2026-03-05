@@ -7,7 +7,11 @@ using ChaimWarehouse.WarehouseFolder;
 
 namespace ChaimWarehouse.Commands
 {
-    internal class AddNewItemCommand : IUndoCommand
+    /// <summary>
+    /// Command that adds a new item to the warehouse.
+    /// Reads the name, price and optional properties from the command arguments.
+    /// </summary>
+    public class AddNewItemCommand : IUndoCommand
     {
         public void Execute(string[] args)
         {

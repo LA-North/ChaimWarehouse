@@ -6,8 +6,12 @@ using ChaimWarehouse.WarehouseFolder;
 
 namespace ChaimWarehouse.QueryFolder
 {
-    
-    internal class OrderbyQuery : IQueryType
+    /// <summary>
+    /// Handles the ORDER BY part of the query.
+    /// Parses property name and direction (ascending / descending)
+    /// and returns a function that sorts the items.
+    /// </summary>
+    public class OrderbyQuery : IQueryType
     {
         public Func<IEnumerable<Item>, object> Execute(string orderbyString)
         {

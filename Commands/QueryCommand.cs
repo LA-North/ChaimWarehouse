@@ -7,7 +7,11 @@ using ChaimWarehouse.WarehouseFolder;
 
 namespace ChaimWarehouse.Commands
 {
-    internal class QueryCommand : INotUndoCommand
+    /// <summary>
+    /// Command that runs a query on the warehouse items.
+    /// Allows filtering, selecting fields and sorting the results.
+    /// </summary>
+    public class QueryCommand : INotUndoCommand
     {
         public void Execute(string[] args)
         {

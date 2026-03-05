@@ -6,8 +6,11 @@ using ChaimWarehouse.WarehouseFolder;
 
 namespace ChaimWarehouse.QueryFolder
 {
-    
-    internal class WhereQuery : IQueryType
+    /// <summary>
+    /// Handles the WHERE part of the query.
+    /// Supports conditions on the item propertyes like [&& ||  < > == ...].
+    /// </summary>
+    public class WhereQuery : IQueryType
     {
         
         public Func<IEnumerable<Item>, object> Execute(string queryTypeString)

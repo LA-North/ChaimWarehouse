@@ -6,8 +6,11 @@ using ChaimWarehouse.WarehouseFolder;
 
 namespace ChaimWarehouse.QueryFolder
 {
-    
-    internal class SelectQuery : IQueryType
+    /// <summary>
+    /// Handles the SELECT part of the query.
+    /// Supports selecting properties, or functions like SUM and AVG.
+    /// </summary>
+    public class SelectQuery : IQueryType
     {
         public Func<IEnumerable<Item>, object> Execute(string selectString)
         {

@@ -4,10 +4,13 @@ using System.Text;
 
 namespace ChaimWarehouse.WarehouseFolder
 {
-    internal enum ItemProperty
+    /// <summary>
+    /// Enum that holds the propertys of the item. 
+    /// </summary>
+    public enum ItemProperty
     {
-        edible,
-        needscooling,
-        fragile
+        Edible,
+        Needscooling,
+        Fragile
     }
 }

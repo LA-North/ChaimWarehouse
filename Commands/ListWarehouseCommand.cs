@@ -5,7 +5,11 @@ using ChaimWarehouse.WarehouseFolder;
 
 namespace ChaimWarehouse.Commands
 {
-    internal class ListWarehouseCommand : INotUndoCommand
+    /// <summary>
+    /// Command that prints all items currently stored in the warehouse.
+    /// Useful for quickly viewing the full inventory.
+    /// </summary>
+    public class ListWarehouseCommand : INotUndoCommand
     {
         public void Execute(string[] args)
         {
