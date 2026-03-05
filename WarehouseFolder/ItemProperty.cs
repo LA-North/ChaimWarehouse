@@ -5,7 +5,7 @@ using System.Text;
 namespace ChaimWarehouse.WarehouseFolder
 {
     /// <summary>
-    /// Enum that holds the propertys of the item. 
+    /// Enum that holds the properties of the item. 
     /// </summary>
     public enum ItemProperty
     {

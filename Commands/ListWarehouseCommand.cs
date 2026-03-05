@@ -9,7 +9,7 @@ namespace ChaimWarehouse.Commands
     /// Command that prints all items currently stored in the warehouse.
     /// Useful for quickly viewing the full inventory.
     /// </summary>
-    public class ListWarehouseCommand : INotUndoCommand
+    public class ListWarehouseCommand : ICommand
     {
         public void Execute(string[] args)
         {

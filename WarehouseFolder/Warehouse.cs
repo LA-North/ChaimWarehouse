@@ -14,14 +14,16 @@ namespace ChaimWarehouse.WarehouseFolder
         private static Warehouse warehouse;
 
         public event EventHandler<LowStockEventArgs>? LowStock;
-        public Dictionary<Item, int> ItemsInWarehouse { get; private set; } = new Dictionary<Item, int>();
+        public Dictionary<Item, int> ItemsInWarehouse { get; private set; }
+
+        private Warehouse() { }
        
         public static Warehouse GetWarehouse()
         {
            return null;
         }
         
-        public void AddnewItem(Item item)
+        public void AddNewItem(Item item)
         {
             
         }
@@ -43,7 +45,7 @@ namespace ChaimWarehouse.WarehouseFolder
            
         }
         
-        public void UpdateQuantity(Item item) { }
+        public void UpdateQuantity(int id) { }
 
         protected virtual void OnLowStock(Item item, int quantity, int threshold)
         {

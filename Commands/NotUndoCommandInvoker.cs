@@ -10,7 +10,7 @@ namespace ChaimWarehouse.Commands
     /// </summary>
     public class NotUndoCommandInvoker
     {
-        public void Execute(INotUndoCommand notUndoCommand, string[] args) 
+        public void Execute(ICommand notUndoCommand, string[] args) 
         {
            
         }

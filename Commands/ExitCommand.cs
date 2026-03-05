@@ -7,7 +7,7 @@ namespace ChaimWarehouse.Commands
     /// <summary>
     /// Represents the command used to terminate the application.
     /// </summary>
-    public class ExitCommand : INotUndoCommand
+    public class ExitCommand : ICommand
     {
         public void Execute(string[] args)
         {
