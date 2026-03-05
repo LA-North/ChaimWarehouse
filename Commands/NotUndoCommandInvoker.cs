@@ -4,7 +4,11 @@ using System.Text;
 
 namespace ChaimWarehouse.Commands
 {
-    internal class NotUndoCommandInvoker
+    /// <summary>
+    /// Invoker used for commands that don't support undo.
+    /// Simply runs the command without storing it in history.
+    /// </summary>
+    public class NotUndoCommandInvoker
     {
         public void Execute(INotUndoCommand notUndoCommand, string[] args) 
         {

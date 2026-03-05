@@ -4,8 +4,11 @@ using System.Text;
 
 namespace ChaimWarehouse.QueryFolder
 {
-    
-    internal class QueryParser
+    /// <summary>
+    /// Parses a raw query string into its parts.
+    /// Extracts SELECT, WHERE and ORDERBY sections.
+    /// </summary>
+    public class QueryParser
     {
         public Query Parse(string input)
         {

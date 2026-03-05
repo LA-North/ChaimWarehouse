@@ -1,10 +1,23 @@
 ﻿using ChaimWarehouse.WarehouseFolder;
 using Serilog;
-//using WarehouseManager.WarehouseFolder;
 namespace ChaimWarehouse.Application
 {
-    internal class Program
+    /// <summary>
+    /// The entry point of the WarehouseManager application.
+    /// This class is responsible for initializing the logging system,
+    /// setting up required services such as event listeners,
+    /// and starting the main application workflow.
+    /// </summary>
+    public class Program
     {
+        /// <summary>
+        /// Initializes the logging configuration, creates the main App instance,
+        /// displays the welcome message, and starts the command loop.
+        /// </summary>
+        /// <param name="args">
+        /// args passed to the application.
+        /// not used but available for future extensions.
+        /// </param>
         public static void Main(string[] args)
         {
             EventMessageService eventMessageService = new EventMessageService(Warehouse.GetWarehouse());

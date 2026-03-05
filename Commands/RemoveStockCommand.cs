@@ -4,7 +4,10 @@ using System.Text;
 
 namespace ChaimWarehouse.Commands
 {
-    internal class RemoveStockCommand : IUndoCommand
+    /// <summary>
+    /// Command that decreases the quantity of an item in the warehouse.
+    /// </summary>
+    public class RemoveStockCommand : IUndoCommand
     {
         public void Execute(string[] args)
         {

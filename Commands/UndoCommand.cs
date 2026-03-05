@@ -4,7 +4,11 @@ using System.Text;
 
 namespace ChaimWarehouse.Commands
 {
-    internal class UndoCommand : INotUndoCommand
+    /// <summary>
+    /// Command that undoes the last command that supports undo.
+    /// Works with the command history stored by the invoker.
+    /// </summary>
+    public class UndoCommand : INotUndoCommand
     {
         public void Execute(string[] args)
         {

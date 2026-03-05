@@ -4,7 +4,11 @@ using System.Text;
 
 namespace ChaimWarehouse.Commands
 {
-    internal class UndoCommandInvoker
+    /// <summary>
+    /// Invoker that executes commands and keeps history
+    /// so they can be undone later.
+    /// </summary>
+    public class UndoCommandInvoker
     {
         public void Execute(IUndoCommand undoCommand, string[] args)
         {
