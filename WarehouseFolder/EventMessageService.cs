@@ -7,7 +7,7 @@ using System.Text;
 namespace ChaimWarehouse.WarehouseFolder
 {
     /// <summary>
-    /// Represents the handleing of the event whan it's called.
+    /// Represents the handling of the event when it's called.
     /// </summary>
     public class EventMessageService
     {

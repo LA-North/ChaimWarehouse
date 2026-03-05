@@ -6,11 +6,10 @@ namespace ChaimWarehouse.WarehouseFolder
 {
     /// <summary>
     /// Represents a product stored in the warehouse.
-    /// Contains basic details like name, price and properties.
     /// </summary>
     public class Item
     {
-        private static int CounterId { get; set; } 
+        private static int CounterId { get; set; } = 0;
         public int Id { get; }
         public string Name { get; set; }
         public double Price { get; set; }
@@ -24,11 +23,11 @@ namespace ChaimWarehouse.WarehouseFolder
         }
         public bool HasProperty(ItemProperty prop)
         {
-            return this.Properties.Contains(prop);
+            return Properties.Contains(prop);
         }
         public override string ToString()
         {
-            return $"<Id: {this.Id}, Name: {this.Name}, Price: {this.Price}, Properties: {string.Join(", ", this.Properties)}>";
+            return $"<Id: {Id}, Name: {Name}, Price: {Price}, Properties: {string.Join(", ", Properties)}>";
         }
     }
 }

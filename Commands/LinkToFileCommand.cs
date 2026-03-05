@@ -8,7 +8,7 @@ namespace ChaimWarehouse.Commands
     /// Command that loads and runs commands from a file.
     /// Allows executing multiple commands automatically from a text file.
     /// </summary>
-    public class LinkToFileCommand : INotUndoCommand
+    public class LinkToFileCommand : ICommand
     {
         public void Execute(string[] args)
         {

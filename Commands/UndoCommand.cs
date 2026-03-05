@@ -8,7 +8,7 @@ namespace ChaimWarehouse.Commands
     /// Command that undoes the last command that supports undo.
     /// Works with the command history stored by the invoker.
     /// </summary>
-    public class UndoCommand : INotUndoCommand
+    public class UndoCommand : ICommand
     {
         public void Execute(string[] args)
         {

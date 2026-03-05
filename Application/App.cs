@@ -15,10 +15,7 @@ namespace ChaimWarehouse.Application
     public class App
     {
         /// <summary>
-        /// Starts the main application loop.
-        /// The method reads user commands from the input provider,
-        /// parses the command name and arguments, and executes the command using the invoker.
-        /// The loop runs until the user enters the "exit" command.
+        /// Run the main application loop.
         /// </summary>
         public void Run()
         {

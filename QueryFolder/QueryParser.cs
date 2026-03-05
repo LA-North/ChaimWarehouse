@@ -10,6 +10,7 @@ namespace ChaimWarehouse.QueryFolder
     /// </summary>
     public class QueryParser
     {
+        public QueryParser() { }
         public Query Parse(string input)
         {
             return null;
