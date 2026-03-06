@@ -1,38 +1,35 @@
 ﻿using ChaimWarehouse.WarehouseFolder;
+using Microsoft.Extensions.Configuration;
 using Serilog;
 namespace ChaimWarehouse.Application
 {
     /// <summary>
     /// The entry point of the WarehouseManager application.
-    /// This class is responsible for initializing the logging system,
-    /// setting up required services such as event listeners,
     /// and starting the main application workflow.
     /// </summary>
     public class Program
     {
         /// <summary>
-        /// Initializes the logging configuration, creates the main App instance,
-        /// displays the welcome message, and starts the command loop.
+        /// Start the program 
         /// </summary>
-        /// <param name="args">
-        /// args passed to the application.
-        /// not used but available for future extensions.
-        /// </param>
-        public static void Main(string[] args)
+        public static void Main()
         {
             EventMessageService eventMessageService = new EventMessageService(Warehouse.GetWarehouse());
+
+            var configuration = new ConfigurationBuilder()
+                   .AddJsonFile("C:\\Users\\chaim\\Desktop\\C#\\WarehouseManager\\appsettings.json", optional: false, reloadOnChange: true)
+                   .Build();
+
             Log.Logger = new LoggerConfiguration()
-                 .MinimumLevel.Debug()
-                 .WriteTo.Console()
-                 .WriteTo.File("logs/log-.txt", rollingInterval: RollingInterval.Day)
-                 .CreateLogger();
+                .ReadFrom.Configuration(configuration)
+                .CreateLogger();
+
             try
             {
                 Log.Information("Starting application");
                 var app = new App();
                 app.ShowWelcome();
                 app.Run();
-
             }
             catch (Exception ex)
             {
