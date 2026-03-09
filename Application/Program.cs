@@ -16,19 +16,14 @@ namespace ChaimWarehouse.Application
         {
             EventMessageService eventMessageService = new EventMessageService(Warehouse.GetWarehouse());
 
-            var configuration = new ConfigurationBuilder()
-                   .AddJsonFile("C:\\Users\\chaim\\Desktop\\C#\\WarehouseManager\\appsettings.json", optional: false, reloadOnChange: true)
-                   .Build();
-
             Log.Logger = new LoggerConfiguration()
-                .ReadFrom.Configuration(configuration)
+                .ReadFrom.Configuration(WarehouseSettings.ConfigurationLoader())
                 .CreateLogger();
 
             try
             {
                 Log.Information("Starting application");
                 var app = new App();
-                app.ShowWelcome();
                 app.Run();
             }
             catch (Exception ex)

@@ -13,8 +13,9 @@ namespace ChaimWarehouse.WarehouseFolder
 
         private static Warehouse warehouse;
 
-        public event EventHandler<LowStockEventArgs>? LowStock;
-        public Dictionary<Item, int> ItemsInWarehouse { get; private set; }
+        public event EventHandler<LowStockEventArgs> LowStock;
+
+        public IDictionary<Item, int> ItemsInWarehouse { get; set; }
 
         private Warehouse() { }
        
