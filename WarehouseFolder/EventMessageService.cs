@@ -14,6 +14,7 @@ namespace ChaimWarehouse.WarehouseFolder
         public EventMessageService(Warehouse warehouse) 
         {
         }
+
         private void OnLowStock(object? sender, LowStockEventArgs e)
         {
         }

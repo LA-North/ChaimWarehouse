@@ -9,17 +9,21 @@ namespace ChaimWarehouse.WarehouseFolder
     /// </summary>
     public class Item
     {
-        private static int CounterId { get; set; } = 0;
+        private static int CounterId { get; set; }
         public int Id { get; }
         public string Name { get; set; }
         public double Price { get; set; }
         public HashSet<ItemProperty> Properties { get; set; } 
-        public Item(string Name, double Price, HashSet<ItemProperty> Properties) 
+        static Item()
         {
-            this.Id = ++CounterId;
-            this.Name = Name;
-            this.Price = Price;
-            this.Properties = Properties;
+            CounterId = 0;
+        }
+        public Item(string name, double price, HashSet<ItemProperty> properties) 
+        {
+            Id = ++CounterId;
+            Name = name;
+            Price = price;
+            Properties = properties;
         }
         public bool HasProperty(ItemProperty prop)
         {

@@ -4,7 +4,6 @@ using System.Text;
 
 namespace ChaimWarehouse.Commands
 {
-   
     /// <summary>
     /// Interface for commands that can only run but cannot be undone.
     /// </summary>

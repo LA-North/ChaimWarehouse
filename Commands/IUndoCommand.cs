@@ -8,9 +8,8 @@ namespace ChaimWarehouse.Commands
     /// Interface for commands that support execution and undo.
     /// Used by commands that modify the warehouse state.
     /// </summary>
-    public interface IUndoCommand
+    public interface IUndoCommand : ICommand
     {
-        void Execute(string[] args);
         void Undo();
     }
 }
