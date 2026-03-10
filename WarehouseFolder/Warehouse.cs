@@ -10,11 +10,8 @@ namespace ChaimWarehouse.WarehouseFolder
     /// </summary>
     public class Warehouse
     {
-
         private static Warehouse warehouse;
-
         public event EventHandler<LowStockEventArgs> LowStock;
-
         public IDictionary<Item, int> ItemsInWarehouse { get; set; }
 
         private Warehouse() { }
@@ -52,8 +49,5 @@ namespace ChaimWarehouse.WarehouseFolder
         {
           
         }
-
-
-
     }
 }

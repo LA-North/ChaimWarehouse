@@ -18,6 +18,7 @@ namespace ChaimWarehouse.Application
         /// Reads the low stock threshold value from the configuration file.
         /// The threshold is the minimum quantity allowed in warehouse Item. 
         /// </summary>
+        
         public static int LoadThreshold()
         {
             return int.MaxValue;

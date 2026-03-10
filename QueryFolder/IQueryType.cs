@@ -23,7 +23,5 @@ namespace ChaimWarehouse.QueryFolder
         /// the query operation on them, returning the result can be a collection or number.
         /// </returns>
         public Func<IEnumerable<Item>, object> Execute(string selectString);
-        
-
     }
 }

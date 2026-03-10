@@ -35,6 +35,5 @@ namespace ChaimWarehouse.Application
                 Log.CloseAndFlush();
             }
         }
-       
     }
 }

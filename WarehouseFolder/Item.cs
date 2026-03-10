@@ -10,7 +10,7 @@ namespace ChaimWarehouse.WarehouseFolder
     public class Item
     {
         private static int CounterId { get; set; }
-        public int Id { get; }
+        public int Id { get; init; }
         public string Name { get; set; }
         public double Price { get; set; }
         public HashSet<ItemProperty> Properties { get; set; } 
@@ -18,6 +18,7 @@ namespace ChaimWarehouse.WarehouseFolder
         {
             CounterId = 0;
         }
+
         public Item(string name, double price, HashSet<ItemProperty> properties) 
         {
             Id = ++CounterId;
@@ -25,10 +26,12 @@ namespace ChaimWarehouse.WarehouseFolder
             Price = price;
             Properties = properties;
         }
+
         public bool HasProperty(ItemProperty prop)
         {
             return Properties.Contains(prop);
         }
+
         public override string ToString()
         {
             return $"<Id: {Id}, Name: {Name}, Price: {Price}, Properties: {string.Join(", ", Properties)}>";

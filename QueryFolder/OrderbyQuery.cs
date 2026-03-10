@@ -18,6 +18,7 @@ namespace ChaimWarehouse.QueryFolder
             return null;
 
         }
+
         private PropertyInfo GetProperty(string propertyName)
         {
             return null;
