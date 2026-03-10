@@ -14,11 +14,11 @@ namespace ChaimWarehouse.Application
     public static class WarehouseSettings
     {
         public static IConfigurationRoot ConfigurationLoader() { return null; }
+
         /// <summary>
         /// Reads the low stock threshold value from the configuration file.
         /// The threshold is the minimum quantity allowed in warehouse Item. 
         /// </summary>
-        
         public static int LoadThreshold()
         {
             return int.MaxValue;
