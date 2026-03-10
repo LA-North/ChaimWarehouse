@@ -11,8 +11,6 @@ namespace ChaimWarehouse.Commands
     public class CommandInvoker
     {
         public void Execute(ICommand Command, string[] args) 
-        {
-            
-        }
+        {  }
     }
 }

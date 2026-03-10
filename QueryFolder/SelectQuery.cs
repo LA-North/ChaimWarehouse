@@ -16,10 +16,12 @@ namespace ChaimWarehouse.QueryFolder
         {
             return null;
         }
+
         private string ExtractProperty(string input, string keyword)
         {
             return null;
         }
+        
         private PropertyInfo GetProperty(string propertyName)
         {
             return null;
