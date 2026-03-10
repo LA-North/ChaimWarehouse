@@ -25,7 +25,7 @@ namespace ChaimWarehouse.Application
         /// Displays the welcome message and basic instructions to the user
         /// when the application starts.
         /// </summary>
-        private void ShowWelcome()
+        private static void ShowWelcome()
         {
             
         }
