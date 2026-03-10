@@ -11,7 +11,6 @@ namespace ChaimWarehouse.InputTypes
     {
         public string GetInputString()
         {
-            
             return "input";
         }
     }

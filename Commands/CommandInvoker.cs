@@ -5,12 +5,22 @@ using System.Text;
 namespace ChaimWarehouse.Commands
 {
     /// <summary>
-    /// Invoker used for commands that don't support undo.
-    /// Simply runs the command without storing it in history.
+    /// Invoker that executes commands and keeps history
+    /// so they can be undone later.
     /// </summary>
     public class CommandInvoker
     {
-        public void Execute(ICommand Command, string[] args) 
-        {  }
+        public void Execute(ICommand Command, string[] args)
+        { }
+
+        public void Execute(IUndoCommand undoCommand, string[] args)
+        {
+
+        }
+
+        public void Undo()
+        {
+
+        }
     }
 }
