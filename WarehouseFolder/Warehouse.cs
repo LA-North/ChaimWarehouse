@@ -83,10 +83,11 @@ namespace ChaimWarehouse.WarehouseFolder
         }
 
         /// <summary>
-        /// Called after an item's quantity changes to evaluate warehouse rules.
+        /// Evaluates the quantity of an item in the warehouse and triggers the LowStock event
+        /// if the quantity falls below the configured threshold.
         /// </summary>
         /// <param name="id">The identifier of the item whose quantity was changed.</param>
-        public void UpdatedQuantity(int id) { }
+        public void CheckAndNotifyLowStock(int id) { }
 
         /// <summary>
         /// Raises the LowStock event when a low stock condition occurs by calling the OnLowStock function.
