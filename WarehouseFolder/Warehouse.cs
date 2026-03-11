@@ -11,9 +11,9 @@ namespace ChaimWarehouse.WarehouseFolder
     public class Warehouse
     {
         /// <summary>
-        /// Holds the single instance of the warehouse (Singleton instance).
+        /// Holds the single instance of the warehouse.
         /// </summary>
-        private static Warehouse warehouse;
+        public static Warehouse Instance { get; }
 
         /// <summary>
         /// Event raised when an item reaches a low stock condition.
@@ -23,19 +23,20 @@ namespace ChaimWarehouse.WarehouseFolder
         /// <summary>
         /// Collection that stores the items and their current quantities.
         /// </summary>
-        public IDictionary<Item, int> ItemsInWarehouse { get; set; }
+        public IDictionary<Item, int> ItemsInWarehouse { get; }
 
         /// <summary>
-        /// Private constructor to prevent external creation of the warehouse instance.
+        /// Private constructor to Initialize instance inside the class.
         /// </summary>
         private Warehouse() { }
 
         /// <summary>
-        /// Returns the single warehouse instance.
+        /// Initializes the singleton instance of the Warehouse class 
+        /// before any static members are accessed or any  instances are created.
         /// </summary>
-        public static Warehouse GetWarehouse()
+        static Warehouse()
         {
-            return null;
+            Instance = new Warehouse();
         }
 
         /// <summary>
@@ -88,7 +89,7 @@ namespace ChaimWarehouse.WarehouseFolder
         public void UpdatedQuantity(int id) { }
 
         /// <summary>
-        /// Raises the LowStock event when a low stock condition occurs.
+        /// Raises the LowStock event when a low stock condition occurs by calling the OnLowStock function.
         /// </summary>
         /// <param name="item">The item that his quantity is below the threshold.</param>
         /// <param name="quantity">What quantity trying to be changed.</param>

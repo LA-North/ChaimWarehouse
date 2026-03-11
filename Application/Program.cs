@@ -14,10 +14,10 @@ namespace ChaimWarehouse.Application
         /// </summary>
         public static void Main()
         {
-            EventMessageService eventMessageService = new EventMessageService(Warehouse.GetWarehouse());
+            EventMessageService eventMessageService = new EventMessageService(Warehouse.Instance);
 
             Log.Logger = new LoggerConfiguration()
-                .ReadFrom.Configuration(WarehouseSettings.ConfigurationLoader())
+                .ReadFrom.Configuration(WarehouseSettings.Configuration)
                 .CreateLogger();
 
             try
