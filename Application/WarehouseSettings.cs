@@ -13,15 +13,18 @@ namespace ChaimWarehouse.Application
     /// </summary>
     public static class WarehouseSettings
     {
-        public static IConfigurationRoot ConfigurationLoader() { return null; }
+        public static IConfigurationRoot Configuration { get; } =
+            new ConfigurationBuilder()
+                .SetBasePath(Directory.GetCurrentDirectory())
+                .AddJsonFile("appsettings.json", optional: false, reloadOnChange: true)
+                .AddJsonFile("appsettings.logger.json", optional: false, reloadOnChange: true)
+                .Build();
 
         /// <summary>
         /// Reads the low stock threshold value from the configuration file.
         /// The threshold is the minimum quantity allowed in warehouse Item. 
         /// </summary>
-        public static int LoadThreshold()
-        {
-            return int.MaxValue;
-        }
+        public static int Threshold =>
+           Configuration.GetValue<int>("LowStockThreshold");
     }
 }
