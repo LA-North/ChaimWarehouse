@@ -16,8 +16,19 @@ namespace ChaimWarehouse.Application
         {
             EventMessageService eventMessageService = new EventMessageService(Warehouse.Instance);
 
+            WarehouseConfiguration.SerilogSettingsConfig = new ConfigurationBuilder()
+                .AddJsonFile("appsettings.logger.json", optional: false, reloadOnChange: true)
+                .Build();
+
+            WarehouseConfiguration.AppSettingsConfig = new ConfigurationBuilder()
+                .AddJsonFile("appsettings.json", optional: false, reloadOnChange: true)
+                .Build();
+
+            WarehouseConfiguration.AppSettingsConfig.Get<AppSettings>();
+
+            Console.WriteLine(AppSettings.LowStockThreshold);
             Log.Logger = new LoggerConfiguration()
-                .ReadFrom.Configuration(WarehouseSettings.Configuration)
+                .ReadFrom.Configuration(WarehouseConfiguration.SerilogSettingsConfig)
                 .CreateLogger();
 
             try
