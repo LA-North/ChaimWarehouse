@@ -27,7 +27,7 @@ namespace ChaimWarehouse.Application
         /// </summary>
         private static void ShowWelcome()
         {
-            
+
         }
     }
 }
