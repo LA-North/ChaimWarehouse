@@ -4,6 +4,7 @@ using System.Collections.Generic;
 using System.Text;
 using ChaimWarehouse.Commands;
 using ChaimWarehouse.InputTypes;
+using ChaimWarehouse.WarehouseFolder;
 
 namespace ChaimWarehouse.Application
 {
