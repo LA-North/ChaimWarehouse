@@ -1,4 +1,5 @@
-﻿using Serilog;
+﻿using ChaimWarehouse.Application;
+using Serilog;
 using System;
 using System.Collections.Generic;
 using System.Text;
@@ -24,6 +25,11 @@ namespace ChaimWarehouse.WarehouseFolder
         /// Collection that stores the items and their current quantities.
         /// </summary>
         public IDictionary<Item, int> ItemsInWarehouse { get; }
+
+        /// <summary>
+        /// Settings property to hold the configuration values for the warehouse, such as low stock threshold.
+        /// </summary>
+        public WarehouseSettings Settings { get; set; }
 
         /// <summary>
         /// Private constructor to Initialize instance inside the class.
