@@ -20,6 +20,52 @@ namespace ChaimWarehouse.Application
         /// </summary>
         public void Run()
         {
+            InputStringProvider inputStringProvider = new InputStringProvider();
+            CommandInvoker commandInvoker = new CommandInvoker();
+            ShowWelcome();
+
+            while (true)
+            {
+                string input = inputStringProvider.GetNextCommandString().ToLower();
+
+                string inputToComper = input.Split(" ")[0];
+                string[] args = input.Split(" ").Skip(1).ToArray();
+
+                switch (inputToComper)
+                {
+                    case "additem":
+                        commandInvoker.Execute(new AddNewItemCommand(), args);
+                        break;
+                    case "addstock":
+                        commandInvoker.Execute(new AddStockCommand(), args);
+                        break;
+                    case "removestock":
+                        commandInvoker.Execute(new RemoveStockCommand(), args);
+                        break;
+                    case "undo":
+                        commandInvoker.Execute(new UndoCommand(commandInvoker), args);
+                        break;
+                    case "link":
+                        commandInvoker.Execute(new LinkToFileCommand(inputStringProvider), args);
+                        break;
+                    case "list":
+                        commandInvoker.Execute(new ListWarehouseCommand(), args);
+                        break;
+                    case "query":
+                        commandInvoker.Execute(new QueryCommand(), args);
+                        break;
+                    case "help":
+                        commandInvoker.Execute(new HelpCommand(), args);
+                        break;
+                    case "exit":
+                        commandInvoker.Execute(new ExitCommand(), args);
+                        Log.Information("Exiting application.");
+                        return;
+                    default:
+                        Log.Warning("Unknown command: {Input}", input);
+                        break;
+                }
+            }
         }
 
         /// <summary>
