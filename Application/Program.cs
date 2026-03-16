@@ -34,8 +34,7 @@ namespace ChaimWarehouse.Application
             try
             {
                 Log.Information("Starting application");
-                var app = new App();
-                app.Run();
+                App.Run();
             }
             catch (Exception ex)
             {

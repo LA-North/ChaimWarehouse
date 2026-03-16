@@ -13,12 +13,12 @@ namespace ChaimWarehouse.Application
     /// The App class is responsible for running the main command loop of the
     /// Warehouse Management System.
     /// </summary>
-    public class App
+    public static class App
     {
         /// <summary>
         /// Run the main application loop.
         /// </summary>
-        public void Run()
+        public static void Run()
         {
             InputStringProvider inputStringProvider = new InputStringProvider();
             CommandInvoker commandInvoker = new CommandInvoker();
@@ -27,7 +27,6 @@ namespace ChaimWarehouse.Application
             while (true)
             {
                 string input = inputStringProvider.GetNextCommandString().ToLower();
-
                 string inputToComper = input.Split(" ")[0];
                 string[] args = input.Split(" ").Skip(1).ToArray();
 
