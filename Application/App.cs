@@ -28,7 +28,13 @@ namespace ChaimWarehouse.Application
         /// </summary>
         private static void ShowWelcome()
         {
-
+            Console.ForegroundColor = ConsoleColor.Cyan;
+            Console.WriteLine("======================================");
+            Console.WriteLine("     WAREHOUSE MANAGEMENT SYSTEM      ");
+            Console.WriteLine("======================================");
+            Console.WriteLine("Type HELP to see available commands.");
+            Console.WriteLine("Type EXIT to close the application.");
+            Console.ResetColor();
         }
     }
 }
