@@ -12,9 +12,8 @@ namespace ChaimWarehouse.InputTypes
     {
         public string GetNextCommandString()
         {
-            //InputByConsole input  = new InputByConsole();
-            //return input.GetInputString(); 
-            return Console.ReadLine();
+            InputByConsole input = new InputByConsole();
+            return input.GetInputString();
         }
     }
 }

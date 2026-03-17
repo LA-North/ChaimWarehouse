@@ -20,8 +20,8 @@ namespace ChaimWarehouse.Application
         /// </summary>
         public static void Run()
         {
-            InputStringProvider inputStringProvider = new InputStringProvider();
-            CommandInvoker commandInvoker = new CommandInvoker();
+            var inputStringProvider = new InputStringProvider();
+            var commandInvoker = new CommandInvoker();
             ShowWelcome();
 
             while (true)
