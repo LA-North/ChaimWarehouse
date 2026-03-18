@@ -20,6 +20,30 @@ namespace ChaimWarehouse.Application
         /// </summary>
         public void Run()
         {
+            var inputStringProvider = new InputStringProvider();
+            var commandInvoker = new CommandInvoker();
+            var appParser = new AppParser(inputStringProvider, commandInvoker);
+            ShowWelcome();
+
+            while (true)
+            {
+                // Takes the input separate the args from the command doing parse to the input and execute it.
+                string input = inputStringProvider.GetNextCommandString().ToLower();
+                string[] args = input.Split(" ").Skip(1).ToArray();
+                var command = appParser.Parse(input);
+
+                if (command is not null)
+                {
+                    if (command is ExitCommand)
+                        break;
+
+                    commandInvoker.Execute(command, args);
+                }
+                else
+                {
+                    Log.Warning("Unknown command: {Input}", input);
+                }
+            }
         }
 
         /// <summary>
@@ -28,7 +52,13 @@ namespace ChaimWarehouse.Application
         /// </summary>
         private static void ShowWelcome()
         {
-
+            Log.Information(
+                "\n======================================\n" +
+                "     WAREHOUSE MANAGEMENT SYSTEM      \n" +
+                "======================================\n" +
+                "Type HELP to see available commands.\n" +
+                "Type EXIT to close the application."
+                );
         }
     }
 }

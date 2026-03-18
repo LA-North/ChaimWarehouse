@@ -1,4 +1,5 @@
-﻿using System;
+﻿using ChaimWarehouse.InputTypes;
+using System;
 using System.Collections.Generic;
 using System.Text;
 
@@ -10,6 +11,13 @@ namespace ChaimWarehouse.Commands
     /// </summary>
     public class LinkToFileCommand : ICommand
     {
+        private InputStringProvider Provider { get; set; }
+
+        public LinkToFileCommand(InputStringProvider provider)
+        {
+            Provider = provider;
+        }
+
         public void Execute(string[] args)
         {
         }

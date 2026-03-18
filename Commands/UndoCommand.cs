@@ -10,9 +10,15 @@ namespace ChaimWarehouse.Commands
     /// </summary>
     public class UndoCommand : ICommand
     {
+        private CommandInvoker CommandInvoker { get; set; }
+
+        public UndoCommand(CommandInvoker commandInvoker)
+        {
+            CommandInvoker = commandInvoker;
+        }
         public void Execute(string[] args)
         {
-            
+
         }
     }
 }

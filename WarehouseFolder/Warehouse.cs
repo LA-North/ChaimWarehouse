@@ -12,16 +12,6 @@ namespace ChaimWarehouse.WarehouseFolder
     public class Warehouse
     {
         /// <summary>
-        /// Holds the single instance of the warehouse.
-        /// </summary>
-        public static Warehouse Instance { get; }
-
-        /// <summary>
-        /// Event raised when an item reaches a low stock condition.
-        /// </summary>
-        public event EventHandler<LowStockEventArgs> LowStock;
-
-        /// <summary>
         /// Collection that stores the items and their current quantities.
         /// </summary>
         public IDictionary<Item, int> ItemsInWarehouse { get; }
@@ -32,9 +22,14 @@ namespace ChaimWarehouse.WarehouseFolder
         public WarehouseSettings Settings { get; set; }
 
         /// <summary>
-        /// Private constructor to Initialize instance inside the class.
+        /// Holds the single instance of the warehouse.
         /// </summary>
-        private Warehouse() { }
+        public static Warehouse Instance { get; }
+
+        /// <summary>
+        /// Event raised when an item reaches a low stock condition.
+        /// </summary>
+        public event EventHandler<LowStockEventArgs> LowStock;
 
         /// <summary>
         /// Initializes the singleton instance of the Warehouse class 
@@ -44,6 +39,11 @@ namespace ChaimWarehouse.WarehouseFolder
         {
             Instance = new Warehouse();
         }
+
+        /// <summary>
+        /// Private constructor to Initialize instance inside the class.
+        /// </summary>
+        private Warehouse() { }
 
         /// <summary>
         /// Adds a new item to the warehouse.
