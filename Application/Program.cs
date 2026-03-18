@@ -14,7 +14,7 @@ namespace ChaimWarehouse.Application
         /// </summary>
         public static void Main()
         {
-            EventMessageService eventMessageService = new EventMessageService(Warehouse.Instance);
+            var eventMessageService = new EventMessageService(Warehouse.Instance);
 
             var appConfiguration = new ConfigurationBuilder()
                 .AddJsonFile("appsettings.json", optional: false, reloadOnChange: true)
