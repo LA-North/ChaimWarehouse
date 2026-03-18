@@ -13,6 +13,7 @@ namespace ChaimWarehouse.Commands
     {
         public void Execute(string[] args)
         {
+            Console.WriteLine("List");
         }
     }
 }

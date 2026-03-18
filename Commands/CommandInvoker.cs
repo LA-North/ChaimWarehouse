@@ -10,8 +10,10 @@ namespace ChaimWarehouse.Commands
     /// </summary>
     public class CommandInvoker
     {
-        public void Execute(ICommand Command, string[] args)
-        { }
+        public void Execute(ICommand command, string[] args)
+        {
+            command.Execute(args);
+        }
 
         public void Execute(IUndoCommand undoCommand, string[] args)
         {

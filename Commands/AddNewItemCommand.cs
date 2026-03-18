@@ -13,7 +13,9 @@ namespace ChaimWarehouse.Commands
     public class AddNewItemCommand : IUndoCommand
     {
         public void Execute(string[] args)
-        {}
+        {
+            Console.WriteLine("ADDING.");
+        }
 
         public void Undo()
         {
